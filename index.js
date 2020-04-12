@@ -7,6 +7,9 @@ var mongodb = require('mongodb');
 bot.commands = new Discord.Collection();
 var MongoClient = mongodb.MongoClient;
 var url = 'mongodb+srv://sen:sen@data-2dbpw.gcp.mongodb.net/test';
+var mongoose = require('mongoose');
+const Mute = require('../models/mute.js');
+mongoose.connect('mongodb+srv://sen:sen@data-2dbpw.gcp.mongodb.net/test',{ useUnifiedTopology: true ,useNewUrlParser: true});
 
 fs.readdir("./commands/", (err, files)=>{
     if(err) console.log(err);
