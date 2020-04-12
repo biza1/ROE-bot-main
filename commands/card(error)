@@ -1,0 +1,131 @@
+// ﻿const Discord = require("discord.js");
+// const botconfig = require("./botconfig.json");
+// const bot = new Discord.Client();
+// const { createCanvas, loadImage,Image} = require('canvas');
+// const canvas = createCanvas(528, 145);
+// const ctx = canvas.getContext('2d');
+// const fs = require('fs');
+// bot.commands = new Discord.Collection();
+
+// module.exports.run = async (bot, message, args) => {
+//     if(message.author.bot) return;
+//     if(message.channel.type === "dm") return;
+    
+//     let prefix = botconfig.prefix;
+//     let messageArray = message.content.split(" ");
+//     let cmd= messageArray[0];
+
+
+// let user = message.mentions.users.first() || message.author;
+
+//     let userinfo = {};
+//         userinfo.avatar = user.displayAvatarURL;
+//         userinfo.name = user.username;
+//         userinfo.discrim - `#${user.discrimination}`;
+//         userinfo.id - user.id;
+//         userinfo.status = user.presence.status;
+//         userinfo.joined = user.joinedAt;
+//     var name = user.id;
+//         var filetn = `./commands/log/warning/${name}/tinnhan`;
+//         var fileinfo = `./commands/log/warning/${name}/info`
+
+                  
+//                     fs.readFile('./commands/log/lvl/lvl','utf8',function(err,datalvl){
+                        
+//                     fs.readFile(filetn,'utf8',function(err,data){  //line 0
+//                         if(err){
+//                             const embed = new Discord.RichEmbed()
+//                                 .setAuthor(user.tag, userinfo.avatar)
+//                                 .setThumbnail(userinfo.avatar)
+//                                 .addField(`Username: ${userinfo.name}`,`ID: ${user.id}`) 
+//                                 // .addField(`ID: `,user.id)
+//                                 .addField(`Status: `,userinfo.status)
+//                                 return message.channel.send(embed);
+//                         }
+//                         var exp = data*10;
+//                         var lines;
+//                         lines = datalvl.split("\n");  
+//                         console.log(lines[1].split(' ')[1])
+//                         for(let i= 0; i<100; i++){
+//                            if(exp == lines[i].split(" ")[1]) {
+//                             console.log(lines[i].split(" ")[0]);
+//                             console.log(lines[i].split(" ")[0]+"\n"+ "\nExp: "+"0/"+lines[i+1].split(' ')[1]);
+//                             return fs.appendFileSync(fileinfo,lines[i].split(" ")[0]+"\n"+ "\nExp: "+"0/"+lines[i+1].split(' ')[1],function(err){});// message.channel.send(`<@${name}>`+" | "+lines[i].split(" ")[0]+ ` | Exp: `+data*10+`/`+ lines[i+1].split(" ")[1]);
+//                             }
+//                         if(exp>lines[i].split(" ")[1]&& exp<lines[i+1].split(" ")[1]){
+//                             console.log(lines[i].split(" ")[0]);
+//                             console.log("Exp: "+exp+"/"+lines[i+1].split(' ')[1]);
+//                                return fs.appendFileSync(fileinfo,lines[i].split(" ")[0]+"\n" +"Exp: "+parseInt(exp-parseInt(lines[i].split(' ')[1]))+"/"+parseInt(parseInt(lines[i+1].split(' ')[1])-parseInt(lines[i].split(' ')[1])),function(err){});// message.channel.send(`<@${name}>`+" | "+lines[i].split(" ")[0]+ ` | Exp: `+data*10+`/`+ lines[i+1].split(" ")[1]);
+//                           }
+//                           if(exp > lines[99].split(" ")[1]) return fs.appendFileSync(fileinfo,"Lv.100"+"\n" ,function(err){});
+//                         }
+                        
+//                     })
+                
+
+//                      setTimeout(function() {
+//                        fs.readFile(fileinfo,'utf8',async function(err,data){
+//                            var lines = data.split("\n");
+//                            for(var i=0;i<5;i++){
+//                                 //console.log(lines[i]);
+//                            }
+//                            console.log(lines)
+//                             let local = lines[1].split(" ");
+//                             let getnum= local[1].split("/");
+//                             let use= parseInt((parseInt(getnum[0])/parseInt(getnum[1]))*303)+180;
+//                            fs.readFile('./lvl.png', (err, lvl) => {
+//                             if (err) throw err
+//                             const img = new Image()
+//                         let keylast= userinfo.avatar.lastIndexOf("?");
+//                           let urlAvatar = userinfo.avatar.slice(0,keylast);
+//                             loadImage(urlAvatar).then((image) => {
+//                               ctx.font = "25px Arial";
+//                               ctx.fillStyle = "gray";
+//                               ctx.moveTo(use,111);
+//                               ctx.lineTo(180,111);
+//                               ctx.strokeStyle = 'gray';
+//                               ctx.lineWidth=20;
+//                               ctx.stroke();
+//                               ctx.drawImage(image, 32, 14,120,120);                             
+//                             img.onload = () => ctx.drawImage(img, 0, 0,528,145);
+//                             img.onerror = err => { throw err }
+//                             img.src = lvl;
+//                             ctx.font = "20px Arial";
+//                             ctx.fillText(user.tag, 180, 80,);//name
+//                             ctx.fillText(lines[0],  200, 100,);//lvl
+//                             ctx.font = "17px Arial";
+//                             ctx.fillText(lines[1], 350, 90,);//exp
+//                             let base64String = canvas.toDataURL();
+//                           // Remove header
+//                           let base64Image = base64String.split(';base64,').pop();
+//                           var fs = require('fs');
+//                           fs.writeFile(`${user.id}.png`, base64Image, {encoding: 'base64'}, async function(err) {
+//                               console.log('File created');
+//                               await message.channel.send( { files: [`${user.id}.png`] });
+//                               fs.unlink(`${user.id}.png`, function (err) {
+//                                 if (err) return;
+//                             }); 
+//                           });
+//                           })
+//                           })
+//                           setTimeout(function() {
+//                          // message.channel.send( { files: ["./image.png"] });
+                            
+//                          return  fs.writeFileSync(fileinfo,""); 
+//                         }, 1000);
+//                     });      
+//                      }, 700);  
+                        
+
+
+//                     });
+
+
+
+
+
+// }
+
+// module.exports.help = {
+//     name: "card"
+// }

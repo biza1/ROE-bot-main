@@ -1,0 +1,12 @@
+Spotify#4451: Beta DX12 trên Win7
+
+
+Người chơi Win7 SP1 với thẻ đồ họa NVIDIA đáp ứng yêu cầu tối thiểu hiện có thể kích hoạt ứng dụng khách DX12 Beta!
+Vui lòng cập nhật trình điều khiển đồ họa của bạn lên phiên bản mới nhất (các phiên bản trước ngày 27 tháng 8 năm 2019 không hỗ trợ tính năng này)
+Do hỗ trợ hệ điều hành chưa hoàn chỉnh, DX12-on-Win7 sẽ bị giảm khung hình ở chế độ Windowed. Chúng tôi khuyên người chơi nên trải nghiệm DX12 ở chế độ Không viền hoặc Toàn màn hình để có hiệu suất tốt hơn. Vì vấn đề này xuất phát từ chính hệ điều hành, chúng tôi sẽ chủ động liên lạc với Microsoft và chúng tôi hy vọng hệ thống có thể được hỗ trợ đầy đủ trong tương lai gần
+Xin lưu ý: Tính đến thời điểm hiện tại, chỉ người dùng card đồ họa Nvidia Win7 mới đủ điều kiện kích hoạt ứng dụng khách DX12. Chúng tôi đang duy trì liên lạc và hợp tác tích cực với AMD và sẽ thêm hỗ trợ cho card đồ họa AMD càng sớm càng tốt. Hãy chú ý đến các cập nhật trong tương lai của chúng tôi về vấn đề này, cảm ơn bạn đã hỗ trợ và hiểu biết của bạn.
+Các yêu cầu phần cứng tối thiểu cho máy khách Win7 DX12 như sau:
+
+HĐH: Windows7 6.1.7601 trở lên
+Trình điều khiển card đồ họa: 26,21.4.3615 trở lên (chúng tôi khuyên bạn nên cập nhật trình điều khiển card đồ họa của bạn lên phiên bản mới nhất)
+Card đồ họa (Nvidia): GTX 750Ti, GTX 760, GTX 770, GTX 780, GTX 950, GTX 965, GTX 1060, 1660, 1660Ti, 1070, 1070Ti, 1080, 1080Ti, 2060, 2070, 2080, 2080, 2080, 2080, 2080 GTX 1050, GTX 960, GTX 970, GTX 980, GTX 980Ti, Titan
