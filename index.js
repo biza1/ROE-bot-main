@@ -116,34 +116,33 @@ bot.on('message', async message => {
                 }                     
             }
     }
-    setInterval(function(){ 
-        Mute.find({
-            __v: 0,
-        },async function(err,result){
-            if(err) return;
-            if(result[0]===undefined) return;
-            for(let x =0; x<result.length;x++){
-                let today = new Date();
-                let old = new Date(`${result[x].time}`);
-                if((today-old)>=result[x].mutetime){
-                    let mUser = message.guild.members.get(result[x].userID);
-                    let muterole = message.guild.roles.find(`name`, "mute");
-                    mUser.removeRole(muterole.id);
-                    Mute.find({userID: mUser.id}).remove().exec();
-                    let sendchannel =  message.guild.channels.find(`id`, "549109631234998273");
-                    const embed = new Discord.RichEmbed()
-                        .setAuthor("Unmute")
-                        .addField(`:white_check_mark:`,`Unmute <@${mUser.id}>`,true)
-                        .setColor("#0af58b")
-                        .setFooter("Code by Sen")
-                        .setTimestamp()
-                    sendchannel.send(embed);
-                     message.channel.send(`Hết hiệu lực mute cho <@${mUser.id}>`);
-			return mongoose.connection.close()
-                }
-            }
-        })
-     }, 1000);
+     // setInterval(function(){ 
+    //     Mute.find({
+    //         __v: 0,
+    //     },async function(err,result){
+    //         if(err) return;
+    //         if(result[0]===undefined) return;
+    //         for(let x =0; x<result.length;x++){
+    //             let today = new Date();
+    //             let old = new Date(`${result[x].time}`);
+    //             if((today-old)>=result[x].mutetime){
+    //                 let mUser = message.guild.members.get(result[x].userID);
+    //                 let muterole = message.guild.roles.find(`name`, "mute");
+    //                 mUser.removeRole(muterole.id);
+    //                 Mute.find({userID: mUser.id}).remove().exec();
+    //                 let sendchannel =  message.guild.channels.find(`id`, "549109631234998273");
+    //                 const embed = new Discord.RichEmbed()
+    //                     .setAuthor("Unmute")
+    //                     .addField(`:white_check_mark:`,`Unmute <@${mUser.id}>`,true)
+    //                     .setColor("#0af58b")
+    //                     .setFooter("Code by Sen")
+    //                     .setTimestamp()
+    //                 sendchannel.send(embed);
+    //                 return message.channel.send(`Hết hiệu lực mute cho <@${mUser.id}>`);
+    //             }
+    //         }
+    //     })
+    //  }, 1000);
 
 
          
