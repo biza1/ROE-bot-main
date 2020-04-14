@@ -9,7 +9,7 @@ var MongoClient = mongodb.MongoClient;
 var url = 'mongodb+srv://sen:sen@data-2dbpw.gcp.mongodb.net/test';
 var mongoose = require('mongoose');
 const Mute = require('./models/mute.js');
-mongoose.connect('mongodb+srv://sen:sen@data-2dbpw.gcp.mongodb.net/test',{ useUnifiedTopology: true ,useNewUrlParser: true});
+
 
 fs.readdir("./commands/", (err, files)=>{
     if(err) console.log(err);
@@ -65,7 +65,7 @@ MongoClient.connect(url, function (err, db) {
 bot.on('message', async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
-
+    mongoose.connect('mongodb+srv://sen:sen@data-2dbpw.gcp.mongodb.net/test',{ useUnifiedTopology: true ,useNewUrlParser: true});
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     var mkdirp = require('mkdirp');
@@ -138,7 +138,8 @@ bot.on('message', async message => {
                         .setFooter("Code by Sen")
                         .setTimestamp()
                     sendchannel.send(embed);
-                    return message.channel.send(`Hết hiệu lực mute cho <@${mUser.id}>`);
+                     message.channel.send(`Hết hiệu lực mute cho <@${mUser.id}>`);
+			return mongoose.connection.close()
                 }
             }
         })
