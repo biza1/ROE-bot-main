@@ -131,6 +131,7 @@ if(time.indexOf(time[t]) === 4)
     mute.save().then(console.log("save")).catch(err => console.log(err));
      message.channel.send(`<@${mUser.id}> bị cấm chat trong ${vntime}`); 
 	setTimeout(function(){
+	if(result[0]===undefined) return;
         mUser.removeRole(muterole.id);
         Mute.find({userID: mUser.id}).remove().exec();
         const embed = new Discord.RichEmbed()
