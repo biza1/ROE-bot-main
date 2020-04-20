@@ -11,8 +11,9 @@ if(message.channel.id=="545269780005781506"){
       let check= message.member.hasPermission("ADMINISTRATOR")||message.member.roles.has("545275416232067072");
 if(!check) return message.channel.send("Vui lòng xuống <#545280256119013406> hoặc <#610833292312182830> để gọi lệnh Bot. Xin cảm ơn <:police:665946381101432881>");
 }
+let time = new Date()
 message.channel.send("yaaaaaaa....").then(m=>{
-    let ping = m.createdTimestamp - message.createdTimestamp
+    let ping =time- m.createdTimestamp
     m.edit(`Latency: \`${ping} ms\``)
 })
 return;
