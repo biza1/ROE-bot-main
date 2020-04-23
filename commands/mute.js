@@ -119,7 +119,11 @@ if(time.indexOf(time[t]) === 4)
         time:new Date()
     });
     mute.save().then(console.log("save")).catch(err => console.log(err));
+<<<<<<< HEAD
      
+=======
+     message.channel.send(`<@${mUser.id}> bị cấm chat trong ${vntime}`); 
+>>>>>>> 8e03a8b3ca7d06a340789af973750dbc322bb3b6
 	setTimeout(function(){
 	Mute.findOne({
         userID: mUser.id
@@ -134,7 +138,12 @@ if(time.indexOf(time[t]) === 4)
 			  .setColor("#0af58b")
 			  .setFooter("Code by Sen")
 			  .setTimestamp()
+<<<<<<< HEAD
         return message.channel.send(embed);
+=======
+		sendchannel.send(embed);
+return message.channel.send(`Hết hiệu lực MUTE cho ${mUser}`);
+>>>>>>> 8e03a8b3ca7d06a340789af973750dbc322bb3b6
     })
     }, Number.timecount);
     // mute người dùng
