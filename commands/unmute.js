@@ -14,7 +14,9 @@ module.exports.run = async (__bot, message, args) => {
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd= messageArray[0];
-if(!message.member.hasPermission("ADMINISTRATOR")) return;
+
+    let checkadmin = message.member.roles.has('545275416232067072')||message.member.hasPermission("ADMINISTRATOR");
+    if(!checkadmin) return;
 
     let mUser = message.guild.member(message.mentions.users.first());
     if(!mUser) return message.channel.send("Không tìm thấy người dùng.");
@@ -33,7 +35,7 @@ if(!message.member.hasPermission("ADMINISTRATOR")) return;
 			  .setColor("#0af58b")
 			  .setFooter("Code by Sen")
 			  .setTimestamp()
-		sendchannel.send(embed);
+		return sendchannel.send(embed);
     })
 
 }

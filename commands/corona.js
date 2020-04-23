@@ -35,8 +35,8 @@ if(!check) return message.channel.send("Vui lòng xuống <#545280256119013406> 
       var vnDie =  result.data.vietnam.deaths;
       var vnRev =  result.data.vietnam.recovered;
 
-      var word ="<:pepemask:676082059168579610>: "+tgGot+" người nhiễm \n\n💀: "+tgDie+" người chết \n\n<:pepeOK:686466713373507614>: "+tgRev+" người chữa trị thành công\n";
-      var vn = "<:pepemask:676082059168579610>: "+vnGot+" người nhiễm \n\n💀: "+vnDie+" người chết \n\n<:pepeOK:686466713373507614>: "+vnRev+" người chữa trị thành công\n";
+      var word ="<:pepemask:676082059168579610>: "+tgGot+" người nhiễm \n\n💀: "+tgDie+" người chết \n\n<:pepeOK:686466713373507614>: "+tgRev+" người hồi phục\n";
+      var vn = "<:pepemask:676082059168579610>: "+vnGot+" người nhiễm \n\n💀: "+vnDie+" người chết \n\n<:pepeOK:686466713373507614>: "+vnRev+" người hồi phục\n";
       const embed = new Discord.RichEmbed()
 			  .setAuthor("Diễn biến dịch Corona ")
 			  .setThumbnail(`https://discordapp.com/assets/ed1c937de3aee41b70cea715005de3ef.svg`)
