@@ -9,6 +9,10 @@ const User = require('./models/user.js');
 mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/database?retryWrites=true&w=majority',
     { useUnifiedTopology: true ,useNewUrlParser: true}
 );
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2c9f57f9401a492151980f7a287f27b91ea145bb
 
 fs.readdir("./commands/", (err, files)=>{
     if(err) console.log(err);
@@ -41,7 +45,7 @@ bot.on('ready', async () => {
    // bot.user.setActivity("",{type:"WATCHING"});
   bot.user.setPresence({
        game: {
-          name: 'RPG Maker MV',
+          name: 'Ring of Elysium',
            type: 'PLAYING',
             url: "https://discordapp.com/"
 		
@@ -127,4 +131,4 @@ bot.on('message', async message => {
     }
 });
 
-bot.login("NjI5MjM2MjU5NjAwMjAzNzg4.XoRHug.2XmMexNvOINfOMsELeS3iVXjed0")//tokenfile.token);
+bot.login(tokenfile.token);

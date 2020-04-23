@@ -3,7 +3,11 @@ const botconfig = require("./botconfig.json");
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 const mongoose = require('mongoose');
+<<<<<<< HEAD
 mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/database?retryWrites=true&w=majority',
+=======
+mongoose.connect('mongodb+srv://sen:senroe@roe-dewbn.azure.mongodb.net/test?retryWrites=true&w=majority',
+>>>>>>> 2c9f57f9401a492151980f7a287f27b91ea145bb
     { useUnifiedTopology: true ,useNewUrlParser: true}
 );
 const User = require('../models/user.js');

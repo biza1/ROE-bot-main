@@ -119,7 +119,11 @@ if(time.indexOf(time[t]) === 4)
         time:new Date()
     });
     mute.save().then(console.log("save")).catch(err => console.log(err));
+<<<<<<< HEAD
 
+=======
+     
+>>>>>>> 2c9f57f9401a492151980f7a287f27b91ea145bb
 	setTimeout(function(){
 	Mute.findOne({
         userID: mUser.id
