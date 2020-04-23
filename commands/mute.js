@@ -5,7 +5,7 @@ const fs = require("fs");
 bot.commands = new Discord.Collection();
 var mongoose = require('mongoose');
 const Mute = require('../models/mute.js');
-mongoose.connect('mongodb+srv://sen:sen@data-2dbpw.gcp.mongodb.net/test',{ useUnifiedTopology: true ,useNewUrlParser: true});
+mongoose.connect('mongodb+srv://sen:senroe@roe-dewbn.azure.mongodb.net/test?retryWrites=true&w=majority',{ useUnifiedTopology: true ,useNewUrlParser: true});
 
 
 module.exports.run = async (__bot, message, args) => {
