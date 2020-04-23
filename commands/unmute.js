@@ -1,9 +1,9 @@
-﻿const Discord = require("discord.js");
+const Discord = require("discord.js");
 const botconfig = require("./botconfig.json");
 const bot = new Discord.Client();
 var mongoose = require('mongoose');
 const Mute = require('../models/mute.js');
-mongoose.connect('mongodb+srv://sen:sen@data-2dbpw.gcp.mongodb.net/test',{ useUnifiedTopology: true ,useNewUrlParser: true});
+mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/database?retryWrites=true&w=majority',{ useUnifiedTopology: true ,useNewUrlParser: true});
 
 bot.commands = new Discord.Collection();
 
