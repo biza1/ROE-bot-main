@@ -5,7 +5,7 @@ const fs = require("fs");
 bot.commands = new Discord.Collection();
 var mongoose = require('mongoose');
 const Mute = require('../models/mute.js');
-mongoose.connect('mongodb+srv://sen:senroe@roe-dewbn.azure.mongodb.net/test?retryWrites=true&w=majority',{ useUnifiedTopology: true ,useNewUrlParser: true});
+mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/database?retryWrites=true&w=majority',{ useUnifiedTopology: true ,useNewUrlParser: true});
 
 
 module.exports.run = async (__bot, message, args) => {
@@ -119,10 +119,9 @@ if(time.indexOf(time[t]) === 4)
         time:new Date()
     });
     mute.save().then(console.log("save")).catch(err => console.log(err));
-     
 	setTimeout(function(){
 	Mute.findOne({
-        userID: mUser.id
+        userID: mUser.id,
     	},(err, result)=>{
         if(err) return console.log(err);
         if(!result) return;
