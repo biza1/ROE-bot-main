@@ -1,4 +1,4 @@
-﻿const Discord = require("discord.js");
+const Discord = require("discord.js");
 const botconfig = require("./botconfig.json");
 const bot = new Discord.Client();
 var mongoose = require('mongoose');
