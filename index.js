@@ -4,7 +4,6 @@ const tokenfile = require("./token.json");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
-<<<<<<< HEAD
 const mongoose = require('mongoose');
 const User = require('./models/user.js');
 mongoose.connect('mongodb+srv://sen:senroe@roe-dewbn.azure.mongodb.net/ROE?retryWrites=true&w=majority',
