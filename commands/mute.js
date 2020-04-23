@@ -131,7 +131,11 @@ if(time.indexOf(time[t]) === 4)
     mute.save().then(console.log("save")).catch(err => console.log(err));
      message.channel.send(`<@${mUser.id}> bị cấm chat trong ${vntime}`); 
 	setTimeout(function(){
-	if(result[0]===undefined) return;
+	Mute.findOne({
+        userID: mUser.id
+    	},(err, result)=>{
+        if(err) return console.log(err);
+        if(!result) return;
         mUser.removeRole(muterole.id);
         Mute.find({userID: mUser.id}).remove().exec();
         const embed = new Discord.RichEmbed()
@@ -140,8 +144,9 @@ if(time.indexOf(time[t]) === 4)
 			  .setColor("#0af58b")
 			  .setFooter("Code by Sen")
 			  .setTimestamp()
-		  sendchannel.send(embed);
-        return message.channel.send(`Hết hiệu lực MUTE cho ${mUser}`);
+		sendchannel.send(embed);
+return message.channel.send(`Hết hiệu lực MUTE cho ${mUser}`);
+    })
     }, Number.timecount);
     // mute người dùng
 }
