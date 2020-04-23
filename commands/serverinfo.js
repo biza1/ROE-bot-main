@@ -21,20 +21,24 @@ module.exports.run = async (_bot, message, args) => {
 	avatarSv= avatarserver.slice(0,avatarserver.lastIndexOf("."));
         if(avatarSv.indexOf('a_')) avatarSv = avatarSv+".gif"
   
+	let arr1 = [];
+    let frole =message.guild.roles.find(function(role){
+        let count = `${role.id}`;
+        arr1.push(`<@&${count}> `);
+    });
         daycreat = new Date(`${message.guild.createdAt}`);
 //console.log(message.guild)
 //console.log(avatarSv)
     let serverembed = new Discord.RichEmbed()
-	    .setAuthor('Thông tin Server',message.guild.iconURL)
+	    .setAuthor('Thông tin Server',avatarSv)
             .setTitle(message.guild.name)
             .setColor("#15edf1")
-            .setThumbnail(message.guild.iconURL)
-            .addField("Tên Server: ",message.guild.name)
-            .addField("Owner: ",message.guild.owner.user.tag)
-            .addField("Số thành viên: ",+message.guild.memberCount+"\nNgày tạo: " + message.guild.createdAt)
+            .setThumbnail(avatarSv)
+            .addField("**Tên Server**",message.guild.name)
+            .addField("**Owner**",message.guild.owner.user.tag)
+            .addField(`**Role**`, `${arr1.length}`, true)
+            .addField("**Số thành viên**",+message.guild.memberCount+"\n**Ngày tạo:** " + moment(message.guild.createdAt).format("H:m:s D/M/YYYY"))
             .setDescription("[Fanpage](https://www.facebook.com/RingofelysiumRoevn/)\n[Group Facebook](https://www.facebook.com/groups/roevietnam.vn/)")
-          
-            
         return message.channel.send(serverembed);
     //thông tin server
 
