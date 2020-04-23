@@ -19,7 +19,8 @@ module.exports.run = async (_bot, message, args) => {
     let today = new Date();
     let avatarserver = message.guild.iconURL;
 	avatarSv= avatarserver.slice(0,avatarserver.lastIndexOf("."));
-        if(avatarSv.indexOf('a_')) avatarSv = avatarSv+".gif"
+        if(avatarSv.indexOf('a_')>-1) avatarSv = avatarSv+".gif";
+    	else avatarSv = avatarserver;
   
 	let arr1 = [];
     let frole =message.guild.roles.find(function(role){
