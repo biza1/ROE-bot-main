@@ -21,7 +21,7 @@ module.exports.run = async (__bot, message, args) => {
 
     ];
     if(result.length<10)return message.channel.send("Đã xảy ra lỗi, vui lòng thử lại sau!");
-    for(var i=0;i<10;i++){
+    for(var i=0;i<10;i++){ 
       await punch.push(`Hạng ${i+1}: <@!${result[i].id}> ${result[i].tinnhan} tin nhắn\n`);
     if(9==i){
       let hit = new Discord.RichEmbed()
