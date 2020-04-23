@@ -5,8 +5,9 @@ const fs = require("fs");
 bot.commands = new Discord.Collection();
 var mongoose = require('mongoose');
 const Mute = require('../models/mute.js');
-mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/database?retryWrites=true&w=majority',{ useUnifiedTopology: true ,useNewUrlParser: true});
-
+mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/data-ROE?retryWrites=true&w=majority',
+    { useUnifiedTopology: true ,useNewUrlParser: true}
+);
 
 module.exports.run = async (__bot, message, args) => {
     if(message.author.bot) return;

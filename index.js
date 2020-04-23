@@ -6,7 +6,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const mongoose = require('mongoose');
 const User = require('./models/user.js');
-mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/database?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/data-ROE?retryWrites=true&w=majority',
     { useUnifiedTopology: true ,useNewUrlParser: true}
 );
 
@@ -127,4 +127,4 @@ bot.on('message', async message => {
     }
 });
 
-bot.login(tokenfile.token);
+bot.login("NjI5MjM2MjU5NjAwMjAzNzg4.XoRHug.2XmMexNvOINfOMsELeS3iVXjed0")//tokenfile.token);
