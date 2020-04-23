@@ -42,7 +42,7 @@ bot.on('ready', async () => {
    // bot.user.setActivity("",{type:"WATCHING"});
   bot.user.setPresence({
        game: {
-          name: 'RPG Maker MV',
+          name: 'Ring of Elysium',
            type: 'PLAYING',
             url: "https://discordapp.com/"
 		
