@@ -9,10 +9,6 @@ const User = require('./models/user.js');
 mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/database?retryWrites=true&w=majority',
     { useUnifiedTopology: true ,useNewUrlParser: true}
 );
-<<<<<<< HEAD
-=======
-
->>>>>>> 2c9f57f9401a492151980f7a287f27b91ea145bb
 
 fs.readdir("./commands/", (err, files)=>{
     if(err) console.log(err);
