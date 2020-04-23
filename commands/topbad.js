@@ -32,10 +32,11 @@ module.exports.run = async (__bot, message, args) => {
         .setTimestamp()
       return message.channel.send(hit);
     }
-  }
+  } 
+  
  });
   
- 
+
 }
 
 module.exports.help = {

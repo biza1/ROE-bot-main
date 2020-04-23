@@ -18,7 +18,6 @@ module.exports.run = async (_bot, message, args) => {
 
     let today = new Date();
     let avatarserver = message.guild.iconURL;
-    console.log(avatarserver)
     avatarSv= avatarserver.slice(0,avatarserver.lastIndexOf("."));
     
     if(avatarSv.indexOf('a_')>-1) avatarSv = avatarSv+".gif";
