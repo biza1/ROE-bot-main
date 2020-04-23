@@ -6,7 +6,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const mongoose = require('mongoose');
 const User = require('./models/user.js');
-mongoose.connect('mongodb+srv://sen:senroe@roe-dewbn.azure.mongodb.net/ROE?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/database?retryWrites=true&w=majority',
     { useUnifiedTopology: true ,useNewUrlParser: true}
 );
 
@@ -56,7 +56,6 @@ bot.on('ready', async () => {
 bot.on('message', async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
-    mongoose.connect('mongodb+srv://sen:sen@data-2dbpw.gcp.mongodb.net/test',{ useUnifiedTopology: true ,useNewUrlParser: true});
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     var mkdirp = require('mkdirp');
@@ -102,7 +101,6 @@ bot.on('message', async message => {
             
             if(x===5&&lowercase.indexOf(textH[x]) === -1){
                 if(!result){
-                    console.log("hi")
                     const newUser = new User({
                         _id: mongoose.Types.ObjectId(),
                         id: message.author.id ,

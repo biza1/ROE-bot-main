@@ -3,7 +3,7 @@ const botconfig = require("./botconfig.json");
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://sen:senroe@roe-dewbn.azure.mongodb.net/ROE?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/database?retryWrites=true&w=majority',
     { useUnifiedTopology: true ,useNewUrlParser: true}
 );
 const User = require('../models/user.js');
@@ -15,7 +15,6 @@ module.exports.run = async (bot, message, args) => {
     let user = message.guild.member(message.mentions.users.first() || message.author);
     if(!user) return message.channel.send("Không tìm thấy người dùng!");
     const member = message.guild.member(user);
-    console.log(member._roles.length)
     let infoUser = {};
         infoUser.id=user.user.id;
     let img = user.user.avatar;
