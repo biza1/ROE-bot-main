@@ -26,7 +26,7 @@ module.exports.run = async (__bot, message, args) => {
     if(9==i){
       let hit = new Discord.RichEmbed()
         .setDescription(`${punch.join("")}`)
-        .setTitle("Top 20 người nhắn tin nhiều nhất")
+        .setTitle("Top 10 người nhắn tin nhiều nhất")
         .setColor("#15edf1")
         .setFooter("Code by Sen")
         .setTimestamp()
