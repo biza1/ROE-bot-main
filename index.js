@@ -60,6 +60,14 @@ bot.on('message', async message => {
     let messageArray = message.content.split(" ");
     var mkdirp = require('mkdirp');
     var name = message.author.id;
+    if(message.member.roles.has('637544025246793729')) return;
+    let chatChannel = message.guild.channels.find(`id`,"545272514075557894");
+    if(!chatChannel) return;
+    if(message.channel.id=="545272514075557894") return;
+    if(message.author.id=="328492011403608064") return;
+    let roleRoe = message.guild.roles.find(`id`, "637544025246793729");
+    if(!roleRoe) return;
+    message.guild.member(message.author).addRole(roleRoe.id);
     var noidungtext =message.author.username+'#'+message.author.discriminator+': '+messageArray.join(" "); 
     var channelGet = message.channel.name;
     fs.appendFileSync(`./commands/log/guild/${channelGet}`,noidungtext+"\n");
