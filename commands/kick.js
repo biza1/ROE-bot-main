@@ -14,7 +14,7 @@ module.exports.run = async (__bot, message, args) => {
 
 //kick người dùng
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-	if(!message.member.roles.has('545275416232067072')) return message.channel.send("Bạn không có quyền này!");
+        if(!message.member.hasPermission("BAN_MEMBERS")){message.delete().catch(O_o => {}); return;}
         if(!kUser) return message.channel.send("Không tìm thấy người dùng.");
         //if(!message.member.hasPermission("KICK_MEMBERS")){message.delete().catch(O_o => {}); return;}
         if(kUser.hasPermission("ADMINISTRATOR")) return message.channel.send("Không thể kick thành viên này!");

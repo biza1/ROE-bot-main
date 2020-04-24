@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
     // Moves a member to a voice channel
-    let check  = message.member.roles.has('568105173591785472')||message.member.roles.has('545275416232067072')||message.member.roles.has("591292951905304652");
+    let check  = message.member.roles.has('568105173591785472')||message.member.roles.has('545275416232067072')||message.member.roles.has("591292951905304652")||message.member.roles.has("598845743431680020")||message.member.hasPermission("ADMINISTRATOR");
     if(!check) return;
     //let user = message.mentions.users.first() || message.author;
     let jump = args.join(" ");
