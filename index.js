@@ -127,4 +127,4 @@ bot.on('message', async message => {
     }
 });
 
-bot.login("NjI5MjM2MjU5NjAwMjAzNzg4.XoRHug.2XmMexNvOINfOMsELeS3iVXjed0")//tokenfile.token);
+bot.login(tokenfile.token);
