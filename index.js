@@ -63,12 +63,14 @@ bot.on('message', async message => {
     if(message.member.roles.has('637544025246793729')) return;
     let chatChannel = message.guild.channels.find(`id`,"545272514075557894");
     if(!chatChannel) return;
-    if(message.channel.id=="545272514075557894") return;
-    if(message.author.id=="328492011403608064") return;
-    let roleRoe = message.guild.roles.find(`id`, "637544025246793729");
-    if(!roleRoe) return;
-    message.guild.member(message.author).addRole(roleRoe.id);
-    var noidungtext =message.author.username+'#'+message.author.discriminator+': '+messageArray.join(" "); 
+    if(message.channel.id==="545272514075557894") return;
+    let senUser =message.author.id==="328492011403608064";
+if(!senUser){
+       let roleRoe = message.guild.roles.find(`id`, "637544025246793729");
+        if(!roleRoe) return;
+        message.guild.member(message.author).addRole(roleRoe.id);
+    }
+var noidungtext =message.author.username+'#'+message.author.discriminator+': '+messageArray.join(" "); 
     var channelGet = message.channel.name;
     fs.appendFileSync(`./commands/log/guild/${channelGet}`,noidungtext+"\n");
     console.log(message.channel.name+"|"+message.author.username+'#'+message.author.discriminator+': '+messageArray.join(" "));
