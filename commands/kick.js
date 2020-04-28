@@ -11,13 +11,13 @@ module.exports.run = async (__bot, message, args) => {
     let messageArray = message.content.split(" ");
     let cmd= messageArray[0];
     if(!args[0]||args[0]==="help"){
-        let banEmbed = new Discord.RichEmbed()
+        let kEmbed = new Discord.RichEmbed()
             .setTitle("Kick help")
             .setColor("#9c99ff")
             .setDescription(`**Lệnh**\n\`$${module.exports.help.name} @user#1234 [lý do]\``)
             .setFooter(`Code by Sen`)
             .setTimestamp()
-        return message.channel.send(banEmbed);
+        return message.channel.send(kEmbed);
     }
 
 //kick người dùng
