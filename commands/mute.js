@@ -12,9 +12,16 @@ mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/data-ROE?ret
 module.exports.run = async (__bot, message, args) => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
-    
+    if(!args[0]||args[0]==="help"){
+        let muteEmbed = new Discord.RichEmbed()
+            .setTitle("Mute help")
+            .setColor("#9c99ff")
+            .setDescription(`**Lệnh**\n\`$${module.exports.help.name} @user#1234 [time] [lý do]\`\nĐịnh dạng thời gian trong lệnh lần lượt:\ns = giây\nm = phút\nh = giờ\nd = ngày\ny = năm\nvd: ${prefix}mute @user#0001 2d`)
+            .setFooter("Code by Sen")
+		.setTimestamp()
+        return message.channel.send(muteEmbed);
+    }
     let messageArray = message.content.split(" ");
-if(message.author.id=="390872851424739332") return message.channel.send("Riêng thằng Toàn sẽ không được dùng lệnh này. MuaHahahahahahahahahahahahahahahahahahahahahahahaha");
     console.log(messageArray);
     const   s = 1000;
             m = 60000;
