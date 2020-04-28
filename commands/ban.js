@@ -11,7 +11,15 @@ module.exports.run = async (__bot, message, args) => {
     let messageArray = message.content.split(" ");
     let cmd= messageArray[0];
 
-
+ if(!args[0]||args[0]==="help"){
+        let banEmbed = new Discord.RichEmbed()
+            .setTitle("Ban help")
+            .setColor("#9c99ff")
+            .setDescription(`**Lệnh**\n\`${prefix}${module.exports.help.name} @user#1234 [lý do]\``)
+            .setFooter(`Code by Sen`)
+            .setTimestamp()
+        return message.channel.send(banEmbed);
+    }
 //ban người dùng
             let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
             if(!bUser) return message.channel.send("Không tìm thấy người dùng.");
@@ -26,12 +34,10 @@ module.exports.run = async (__bot, message, args) => {
             .setTitle("Ban")
             .setColor("#9c99ff")
             .setDescription(`Ban bởi ${message.author} ở ${message.channel} lúc ${message.createdAt} \nBan thành viên ${bUser}(ID: ${bUser.id}) với lý do:\n${breason}` )
-            
-            let banChannel = message.guild.channels.find(`name`, "lịch-sử-chỉnh-sửa");
-            if(!banChannel) return message.channel.send("Không thể Ban lúc này!");
-    
+            .setFooter(`Code by Sen`)
+            .setTimestamp()
             message.guild.member(bUser).ban(breason);
-            banChannel.send(banEmbed);
+            message.channel.send(banEmbed);
              message.delete().catch(O_o => {});
              return;
     //ban người dùng
