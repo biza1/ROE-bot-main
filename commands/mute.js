@@ -16,7 +16,7 @@ module.exports.run = async (__bot, message, args) => {
         let muteEmbed = new Discord.RichEmbed()
             .setTitle("Mute help")
             .setColor("#9c99ff")
-            .setDescription(`**Lệnh**\n\`$${module.exports.help.name} @user#1234 [time] [lý do]\`\nĐịnh dạng thời gian trong lệnh lần lượt:\ns = giây\nm = phút\nh = giờ\nd = ngày\ny = năm\nvd: ${prefix}mute @user#0001 2d`)
+            .setDescription(`**Lệnh**\n\`$${module.exports.help.name} @user#1234 [time] [lý do]\`\nĐịnh dạng thời gian trong lệnh lần lượt:\ns = giây\nm = phút\nh = giờ\nd = ngày\ny = năm\nvd: $mute @user#0001 2d`)
             .setFooter("Code by Sen")
 		.setTimestamp()
         return message.channel.send(muteEmbed);
