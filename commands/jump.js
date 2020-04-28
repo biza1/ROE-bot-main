@@ -56,6 +56,7 @@ module.exports.run = async (bot, message, args) => {
 	if(jump.toLowerCase()=="phòng trà"){jump ="☕ Phòng Trà";}
 	if(jump.toLowerCase()=="phòng bay lắc"){jump ="💃 Phòng Bay Lắc";}
     if(jump.toLowerCase()=="talk show"){jump ="🎭 Talk Show";}
+if(jump.toLowerCase()=="phòng chờ"){jump ="Phòng chờ (chưa có team)";}
     if(jump.toLowerCase()=="duo 1"||jump.toLowerCase()=="duo 01"){jump ="🎲 Duo 01";}
     if(jump.toLowerCase()=="duo 2"||jump.toLowerCase()=="duo 02"){jump ="🎲 Duo 02";}
         const channel = message.guild.channels.find('name', `${jump}`);
