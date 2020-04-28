@@ -60,6 +60,7 @@ if(jump.toLowerCase()=="phòng chờ"){jump ="Phòng chờ (chưa có team)";}
     if(jump.toLowerCase()=="duo 1"||jump.toLowerCase()=="duo 01"){jump ="🎲 Duo 01";}
     if(jump.toLowerCase()=="duo 2"||jump.toLowerCase()=="duo 02"){jump ="🎲 Duo 02";}
         const channel = message.guild.channels.find('name', `${jump}`);
+	    if (!channel) return message.channel.send("Không tìm thấy phòng!");
 	if(channel.id==="695169623234052146") return message.channel.send("Không tìm thấy phòng!");
 	if(channel.id==="695173781177630740") return message.channel.send("Không tìm thấy phòng!");
         console.log(jump);
