@@ -15,7 +15,7 @@ module.exports.run = async (__bot, message, args) => {
         let banEmbed = new Discord.RichEmbed()
             .setTitle("Ban help")
             .setColor("#9c99ff")
-            .setDescription(`**Lệnh**\n\`${prefix}${module.exports.help.name} @user#1234 [lý do]\``)
+            .setDescription(`**Lệnh**\n\`$${module.exports.help.name} @user#1234 [lý do]\``)
             .setFooter(`Code by Sen`)
             .setTimestamp()
         return message.channel.send(banEmbed);
