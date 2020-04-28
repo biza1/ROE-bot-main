@@ -10,7 +10,15 @@ module.exports.run = async (__bot, message, args) => {
     let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd= messageArray[0];
-    
+    if(!args[0]||args[0]==="help"){
+        let banEmbed = new Discord.RichEmbed()
+            .setTitle("Kick help")
+            .setColor("#9c99ff")
+            .setDescription(`**Lệnh**\n\`$${module.exports.help.name} @user#1234 [lý do]\``)
+            .setFooter(`Code by Sen`)
+            .setTimestamp()
+        return message.channel.send(banEmbed);
+    }
 
 //kick người dùng
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
@@ -27,12 +35,9 @@ module.exports.run = async (__bot, message, args) => {
         .setTitle("Kick")
         .setColor("#9c99ff")
         .setDescription(`Kick bởi ${message.author} ở ${message.channel} lúc ${message.createdAt} \nKick thành viên ${kUser}(ID: ${kUser.id}) với lý do:\n${kreason}` )
-        
-        let kickChannel = message.guild.channels.find(`name`, "lịch-sử-chỉnh-sửa");
-        if(!kickChannel) return message.channel.send("Không thể Kick lúc này!");
 
         message.guild.member(kUser).kick(kreason);
-        kickChannel.send(kickEmbed);
+         message.channel.send(kickEmbed);
          message.delete().catch(O_o => {});
          return;
 
