@@ -60,16 +60,6 @@ bot.on('message', async message => {
     let messageArray = message.content.split(" ");
     var mkdirp = require('mkdirp');
     var name = message.author.id;
-    if(message.member.roles.has('637544025246793729')) return;
-    let chatChannel = message.guild.channels.find(`id`,"545272514075557894");
-    if(!chatChannel) return;
-    if(message.channel.id==="545272514075557894") return;
-    let senUser =message.author.id==="328492011403608064";
-if(!senUser){
-       let roleRoe = message.guild.roles.find(`id`, "637544025246793729");
-        if(!roleRoe) return;
-        message.guild.member(message.author).addRole(roleRoe.id);
-    }
 var noidungtext =message.author.username+'#'+message.author.discriminator+': '+messageArray.join(" "); 
     var channelGet = message.channel.name;
     fs.appendFileSync(`./commands/log/guild/${channelGet}`,noidungtext+"\n");
@@ -134,6 +124,16 @@ var noidungtext =message.author.username+'#'+message.author.discriminator+': '+m
         let args = messageArray.slice(1);
         let commandfile = bot.commands.get(cmd.slice(prefix.length));
         if (commandfile) commandfile.run(bot,message,args);
+    }
+ if(message.member.roles.has('637544025246793729')) return;
+    let chatChannel = message.guild.channels.find(`id`,"545272514075557894");
+    if(!chatChannel) return;
+    if(message.channel.id==="545272514075557894") return;
+    let senUser =message.author.id==="328492011403608064";
+if(!senUser){
+       let roleRoe = message.guild.roles.find(`id`, "637544025246793729");
+        if(!roleRoe) return;
+        message.guild.member(message.author).addRole(roleRoe.id);
     }
 });
 
