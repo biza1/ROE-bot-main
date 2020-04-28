@@ -130,9 +130,7 @@ var noidungtext =message.author.username+'#'+message.author.discriminator+': '+m
 if(senUser)return;
 else{
 	if(message.member.roles.has('637544025246793729')) return;
-	let chatChannel = message.guild.channels.find(`id`,"545272514075557894");
-	if(!chatChannel) return;
-	if(message.channel.id==="545272514075557894") return;
+	if(message.guild.channels.find(`id`,"545272514075557894").id===message.channel.id)return;
 	let roleRoe = message.guild.roles.find(`id`, "637544025246793729");
 	if(!roleRoe) return;
 	return message.guild.member(message.author).addRole(roleRoe.id);
