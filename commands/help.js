@@ -19,6 +19,7 @@ module.exports.run = async (bot, message, args) => {
     `Xem các role: \`${prefix}role\`\n`,
     `Add role team: \`${prefix}addrole\` hoặc \`${prefix}addrole help\` để xem hướng dẫn\n`,
     `Các lệnh di chuyển khác: \`${prefix}help move\`\n`,
+    `Danh sách Team: \`${prefix}team\` hoặc \`${prefix}team [tên team]\` để xem chi tiết. VD:\`${prefix}team Thích Team\`\n`,
   ];
   let hAdmin = [
     `\n**Administrator**\n`,
@@ -30,6 +31,7 @@ module.exports.run = async (bot, message, args) => {
     `Mute user: \`${prefix}mute @user#0123 [lý do/hoặc không]\` và xem list mute bằng lệnh \`${prefix}listmute\`\n`,
     `Ban user: \`${prefix}ban @user#0123 [lý do]\`\n`,
     `Kick user: \`${prefix}kick @user#0123 [lý do]\`\n`,
+    `Set Team leader: \`${prefix}tleader [Tên Team] [tag leader mới]\`. VD: \`${prefix}tleader Thích Team @Sen#0001\`\n`,
   ];
   let hMove = [
     `Vào phòng muốn kết nối: \`$jump + [tên room]\`\nvd: \`$jump sq1\` \n`,

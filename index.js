@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const User = require('./models/user.js');
 mongoose.connect('mongodb+srv://roe:roe@roe-dewbn.azure.mongodb.net/data-ROE?retryWrites=true&w=majority',
     { useUnifiedTopology: true ,useNewUrlParser: true}
-);
+); 
 
 fs.readdir("./commands/", (err, files)=>{
     if(err) console.log(err);

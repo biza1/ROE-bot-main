@@ -7,6 +7,10 @@ module.exports.run = async (__bot, message, args) => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") return;
     let prefix = botconfig.prefix;
+
+    let messageArray = message.content.split(" ");
+    let hub = messageArray.join(" ");
+    let take = hub.slice(9);
     if(!args[0]||args[0 == "help"]){
         let check = message.member.roles.has('545275416232067072')||message.member.hasPermission("ADMINISTRATOR");
         if(!check){
@@ -26,10 +30,13 @@ module.exports.run = async (__bot, message, args) => {
 
     let user = message.guild.member(message.mentions.users.first());
     if(!user.id) return message.channel.send("Không tìm thấy người dùng!");
-    let getrole = take.slice(0,take.lastIndexOf("<@")-1);
+    console.log(take);
+    let getrole = take.slice(0,take.lastIndexOf("<")-1);
+    console.log(getrole);
     let teamrole = message.guild.roles.find("name", `${getrole}`);
+    if(!teamrole) return message.channel.send("Có lỗi xảy ra, vui lòng thử lại sau!");
     role = teamrole.id;
-    if(!teamrole) return message.channel.send("Không có Role này!");
+    
 
     let check = message.member.roles.has('545275416232067072')||message.member.hasPermission("ADMINISTRATOR");
     if(!check){
@@ -69,7 +76,7 @@ module.exports.run = async (__bot, message, args) => {
         }else{ return message.channel.send("Bạn chỉ có thể thêm role Team mà bạn đang có cho người khác!");}
     }else{
             if(user.hasPermission("ADMINISTRATOR")) return message.channel.send("Không thể set Role thành viên này!");
-            user.addRole(teamrole.id);     
+            user.addRole(role);     
             return message.channel.send(`Done!`);      
     }
 
