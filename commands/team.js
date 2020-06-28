@@ -11,14 +11,14 @@ const team = require("../models/team.js");
 bot.commands = new Discord.Collection();
 const moment = require('moment');
 
-
 module.exports.run = async (bot, message, args) => {
     let checkadmin = message.member.roles.has('545275416232067072')||message.member.hasPermission("ADMINISTRATOR");
     if(!args[0]){
 
         let teamRole = [];
-        var data = []
+        var data = [];
         var outMess = [];
+        var left = [];
         Team.find({}).sort({role:-1}).exec(async function(err, result) { 
             if(!result||result[0]===undefined||err) return message.channel.send("Đã xảy ra lỗi, vui lòng thử lại sau!");
             else{
@@ -27,18 +27,27 @@ module.exports.run = async (bot, message, args) => {
                     if(role.name.indexOf("Team")!=-1) teamRole.push(`${count}`);
                 });
                 
-                for(var i = 0; i < result.length; i++) {
 
-                    let list = message.guild.roles.get(result[i].role).members.map(m=>m.user.id);
-                    data.push({role:`${result[i].role}`,leader:result[i].leader,mem:list.length}); 
-                    for(var j = 0; j < teamRole.length; j++ ) {
-                        if(teamRole[j].indexOf(result[i].role) == -1){
-                            let list = message.guild.roles.get(teamRole[j]).members.map(m=>m.user.id);
-                            data.push({role:`${teamRole[j]}`,mem:list.length});
+
+               let countGet = 0;
+                for(var i = 0; i < teamRole.length; i++) {
+                    for(var j = 0; j < result.length; j++ ) {
+                        if(teamRole[i].indexOf(result[j].role) > -1){
+                            let list = message.guild.roles.get(result[j].role).members.map(m=>m.user.id);
+                            data.push({role:`${result[j].role}`,leader:result[j].leader,mem:list.length});
+                            countGet++;
+                        }else{
+                            if(j == result.length-1&&countGet==i){
+                                let list = message.guild.roles.get(teamRole[i]).members.map(m=>m.user.id);
+                                data.push({role:`${teamRole[i]}`,mem:list.length}); 
+                                countGet++;  
+                            }
                         }
+                                                                                         
                     }
                 }
                 data.sort(function(a, b){return b.mem-a.mem});
+                
                 for(let i =0;i<data.length;i++){
                     if(!data[i].leader){
                         outMess.push(`\`${i+1}\`: <@&${data[i].role}> , ${data[i].mem} thành viên.\n`);
@@ -53,7 +62,7 @@ module.exports.run = async (bot, message, args) => {
                     .setFooter("Code by Sen")
                     .setTimestamp()
                 return message.channel.send(embed);
-
+                
             }
         });
     
