@@ -137,4 +137,4 @@ else{
 }
 });
 
-bot.login(tokenfile.token);
+bot.login(process.env.TOKEN);
